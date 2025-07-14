@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup - Medigo</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+nav .dropbtn {
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    font-size: 16px;
+}
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+nav .dropdown-content a {
+    color: #eee;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+nav .dropdown-content a:hover {
+    background-color: #333;
+    color: #ff7a00;
+}
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Medigo</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="searchbutton.html">Search Doctors</a>
+        <a href="offers.html">Offers</a>
+        <div class="dropdown">
+            <button class="dropbtn" style="color:#ff7a00;">More ▾</button>
+            <div class="dropdown-content">
+                <a href="appointments.html">Appointment</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+<section id="signup-form">
+    <h2>Create Your Account</h2>
+
+    <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" required><br><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p style="text-align:center;">Already have an account? <a href="login.html" style="color:orange;">Login</a></p>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2025 Medigo. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

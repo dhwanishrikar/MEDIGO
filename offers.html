@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers - Medigo</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* dropdown styles */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+nav .dropbtn {
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    font-size: 16px;
+}
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+nav .dropdown-content a {
+    color: #eee;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+nav .dropdown-content a:hover {
+    background-color: #333;
+    color: #ff7a00;
+}
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Medigo</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="searchbutton.html">Search Doctors</a>
+        <a href="offers.html" style="color:#ff7a00;">Offers</a>
+        <div class="dropdown">
+            <button class="dropbtn">More ▾</button>
+            <div class="dropdown-content">
+                <a href="appointments.html">Appointment</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+<section id="offers">
+    <h2>Special Offers & Discounts</h2>
+
+    <div class="offer-card">
+        <h3>First Consultation Offer</h3>
+        <p>Pay for your first consultation and get <strong>1 week of free follow-ups!</strong></p>
+    </div>
+
+    <div class="offer-card">
+        <h3>Regular Checkup Discount</h3>
+        <p>Book 3 regular checkups and get the 4th one <strong>free!</strong></p>
+    </div>
+
+    <div class="offer-card">
+        <h3>Loyalty Rewards</h3>
+        <p>Earn points on every appointment & redeem for discounts on future visits.</p>
+    </div>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2025 Medigo. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

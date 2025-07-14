@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Doctors - Medigo</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+nav .dropdown {
+    position: relative;
+    display: inline-block;
+}
+nav .dropbtn {
+    background: none;
+    border: none;
+    color: #eee;
+    cursor: pointer;
+    font-size: 16px;
+}
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+nav .dropdown-content a {
+    color: #eee;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+nav .dropdown-content a:hover {
+    background-color: #333;
+    color: #ff7a00;
+}
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>MEDIGO✙</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="searchbutton.html" style="color:#ff7a00;">Search Doctors</a>
+        <a href="offers.html">Offers</a>
+        <div class="dropdown">
+            <button class="dropbtn">More ▾</button>
+            <div class="dropdown-content">
+                <a href="appointments.html">Appointment</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+<section id="search-bar">
+       <style>
+        #searchInput {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #ff7a00;
+            box-shadow: 0 0 8px 2px #ff7a00;
+        }
+        </style>
+
+        <input type="text" id="searchInput" placeholder="Search by doctor, specialty, or location">
+        <button id="searchBtn">Search</button>
+</section>
+
+<section id="doctors">
+    <div class="doctor-card">
+        <h3>Dr. Shruthi Shrikar</h3>
+        <p>Specialty: Orthodontist</p>
+        <p>Location: Mangalore</p>
+        <button onclick="location.href='doctor-shruthi.html'">View Profile</button>
+    </div>
+
+    <div class="doctor-card">
+        <h3>Dr. Shrikar B</h3>
+        <p>Specialty: Dermatologist</p>
+        <p>Location: Bangalore</p>
+        <button onclick="location.href='doctor-shrikar.html'">View Profile</button>
+    </div>
+
+    <div class="doctor-card">
+        <h3>Dr. Uma Shrikar</h3>
+        <p>Specialty: Oncologist</p>
+        <p>Location: Mangalore</p>
+        <button onclick="location.href='doctor-uma.html'">View Profile</button>
+    </div>
+
+    <div class="doctor-card">
+        <h3>Dr. Dhwani Shrikar</h3>
+        <p>Specialty: Veterinary</p>
+        <p>Location: Puttur</p>
+        <button onclick="location.href='doctor-duni.html'">View Profile</button>
+    </div>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2025 Medigo. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBtn = document.getElementById("searchBtn");
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".doctor-card");
+
+    searchBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim().toLowerCase();
+
+        let found = false;
+
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+            if (text.includes(query)) {
+                card.style.display = "block";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        if (!found) {
+            if (!document.getElementById("noResult")) {
+                const msg = document.createElement("p");
+                msg.id = "noResult";
+                msg.style.color = "orange";
+                msg.textContent = `No doctors found for "${query}".`;
+                document.getElementById("doctors").appendChild(msg);
+            }
+        } else {
+            const existingMsg = document.getElementById("noResult");
+            if (existingMsg) existingMsg.remove();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
